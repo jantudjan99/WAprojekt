@@ -14,7 +14,7 @@
             <br><br><br><br>
           <input v-model="igraBrisi" type="text">
           <br><br>
-          <button @click="brisiIgru(kartice.imeIgre)">Obriši igru</button>
+          <button @click="brisiIgru()">Obriši igru</button>
           </form>
         </div>
 </div>
