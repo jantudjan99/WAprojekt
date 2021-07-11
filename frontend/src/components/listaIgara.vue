@@ -2,7 +2,7 @@
 <div>
     <div class="l-container">
         <div v-for="(kartice) in kartice" :key="kartice.id" class="b-game-card">
-            <div class="b-game-card__cover"><!--<a v-on:click="brisiIgru(kartice.imeIgre)" class="zatvori"/>--><img :src="kartice.slika" @click="gumb(kartice)"  class="cijelaSlika"><div class="delete">X</div><h1 class="ime_igre">{{kartice.imeIgre}}</h1><h1 class="datum">Datum turnira: {{kartice.datum}}</h1></div>
+            <div class="b-game-card__cover"><img :src="kartice.slika" @click="gumb(kartice)"  class="cijelaSlika"><div class="delete">X</div><h1 class="ime_igre">{{kartice.imeIgre}}</h1><h1 class="datum">Datum turnira: {{kartice.datum}}</h1></div>
 
         </div>
         
@@ -41,10 +41,7 @@ export default {
         },
 
         brisiIgru() {
-          Service.post("/dogadaji/delete/" + this.igraBrisi).then((result) => {
-            console.log("DULJINA:",this.igraBrisi);
-            console.log("RESULT:",result);
-          });
+          Service.post("/dogadaji/delete/" + this.igraBrisi);
 		},  
     },
     async created(){
@@ -59,12 +56,6 @@ export default {
 .zatvori {
 	position: absolute;
   background-color:black;
-	/*right: 32px;
-	top: 70px;
-	width: 20px;
-	height: 20px;
-	opacity: 0.3;
-	cursor: pointer;*/
   width: 50px;
   height: 50px;
   
